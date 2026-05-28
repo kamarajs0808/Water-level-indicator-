@@ -2,9 +2,9 @@
 
 ## Intern Information
 
-* **Intern ID:CITS2534
-* **Intern Name:Kamaraj S
-* **Internship Duration:4 Weeks
+* Intern ID:CITS2534
+* Intern Name:Kamaraj S
+* Internship Duration:4 Weeks
 
 ---
 
