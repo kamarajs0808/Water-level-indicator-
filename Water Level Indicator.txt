@@ -1,0 +1,52 @@
+// Water Level Indicator
+
+int sensorPin = A0;
+
+int redLED = 2;
+int yellowLED = 3;
+int greenLED = 4;
+
+int buzzer = 5;
+
+void setup() {
+
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  int value = analogRead(sensorPin);
+
+  Serial.println(value);
+
+  if(value < 300) {
+
+    digitalWrite(redLED, HIGH);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(greenLED, LOW);
+    digitalWrite(buzzer, LOW);
+  }
+
+  else if(value >= 300 && value < 600) {
+
+    digitalWrite(redLED, LOW);
+    digitalWrite(yellowLED, HIGH);
+    digitalWrite(greenLED, LOW);
+    digitalWrite(buzzer, LOW);
+  }
+
+  else {
+
+    digitalWrite(redLED, LOW);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(greenLED, HIGH);
+    digitalWrite(buzzer, HIGH);
+  }
+
+  delay(200);
+}
